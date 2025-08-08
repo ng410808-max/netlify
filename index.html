@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인 프로필</title>
+    <style>
+        /* CSS 스타일 */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .profile-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4a90e2;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 2em;
+            margin-bottom: 5px;
+            color: #4a90e2;
+        }
+
+        .job-title {
+            font-size: 1.2em;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        .info-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-list strong {
+            color: #555;
+            display: inline-block;
+            width: 100px;
+        }
+
+        .btn-toggle {
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-toggle:hover {
+            background-color: #357bd8;
+        }
+
+        .hidden-info {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <img src="https://via.placeholder.com/150" alt="프로필 사진" class="profile-img">
+        
+        <h1 class="name">김철수</h1>
+        <p class="job-title">웹 개발자</p>
+        
+        <h2 class="section-title">기본 정보</h2>
+        <ul class="info-list">
+            <li><strong>생년월일</strong> 1995.05.20</li>
+            <li><strong>이메일</strong> kcs@example.com</li>
+            <li><strong>연락처</strong> 010-1234-5678</li>
+        </ul>
+
+        <button class="btn-toggle" onclick="toggleInfo()">자세히 보기</button>
+
+        <div id="moreInfo" class="hidden-info">
+            <h2 class="section-title">경력 및 스킬</h2>
+            <ul class="info-list">
+                <li><strong>경력</strong> OOO 주식회사 (2020.01 ~ 현재)</li>
+                <li><strong>스킬</strong> HTML, CSS, JavaScript, React</li>
+                <li><strong>수상 경력</strong> 2022년 웹 개발 공모전 대상</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript 기능
+        function toggleInfo() {
+            const moreInfoDiv = document.getElementById('moreInfo');
+            const button = document.querySelector('.btn-toggle');
+            
+            if (moreInfoDiv.style.display === 'none' || moreInfoDiv.style.display === '') {
+                moreInfoDiv.style.display = 'block';
+                button.textContent = '숨기기';
+            } else {
+                moreInfoDiv.style.display = 'none';
+                button.textContent = '자세히 보기';
+            }
+        }
+    </script>
+</body>
+</html>
